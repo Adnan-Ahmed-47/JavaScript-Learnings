@@ -1,1 +1,0 @@
-"use strict"; // treal all JS code as newer version

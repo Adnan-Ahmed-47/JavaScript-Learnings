@@ -139,3 +139,38 @@ const id2 = Symbol("abc");
 // console.log(x);  //11
 
 
+// let a = 2;
+// let b = a++;
+// let c = ++a;
+// console.log(a, b, c);  // a-4, b-2, c-4
+
+// let a = 10;
+// let b = ++a;
+// let c = b++;
+// console.log(a, b, c); // a-11, b-12, c-11
+
+
+// let x = 5;
+// let y = x++ + ++x;
+// console.log(x, y); // x-7, y-12
+
+
+// let a = 3;
+// let b = ++a + a++;
+// console.log(a, b); // a-5, b-8
+
+// let x = 2;
+// let y = x++ + x++ + ++x;
+// console.log(x, y); // x-5, y-10
+
+// let a = 1;  //3 
+// let b = a++; //1
+// let c = ++a; //3
+// let d = b + c + a;
+// console.log(a, b, c, d); // a-3, b-1, c-3, d-7
+
+
+// let x = Number("5"); //7
+// let y = x++; //5
+// let z = ++x; //7
+// console.log(x, y, z);  // x-7, y-5, z-7

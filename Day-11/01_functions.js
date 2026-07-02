@@ -64,15 +64,32 @@ const result = addTwoNos(3, 5)
 
 // -----------------------------------------------------------------
 
-function loginUserMessage(username) {
-    if(username === undefined) {
+// function loginUserMessage(username) {
+//     // to check the parameter type and then proceed with the execution
+//     // if(username === undefined) { // in place of this we use mostly the below line which is given
+//     if(!username) {
+//         console.log("Please enter a username")
+//         return
+//     }
+//     return `${username} just logged in`
+// }
+
+// console.log(loginUserMessage("Adnan")) // Adnan just logged in
+// console.log(loginUserMessage("")) //   just logged in
+// console.log(loginUserMessage()) // undefined just logged in
+
+
+// NOTE: When u don't pass any value to the function, it returns undefined, not null.
+
+// NOTE: If we want to avoid the user giving nothing, then we give the default value to the parmeter as given below:
+
+function loginUserMessage(username = "sam") { // or username = ""
+
+    if(!username) {
         console.log("Please enter a username")
         return
     }
     return `${username} just logged in`
 }
 
-// console.log(loginUserMessage("Adnan")) // Adnan just logged in
-// console.log(loginUserMessage("")) //   just logged in
 console.log(loginUserMessage()) // undefined just logged in
-

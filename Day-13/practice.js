@@ -182,3 +182,66 @@
 // }
 // console.log(a); // 10
 // console.log(test()); // 20
+
+// Modifying properties (obj.name = "New") changes the original object because both variables point to the same memory address.
+// Overwriting the whole object (obj = { ... }) cuts the wire and creates a completely new address, leaving the original object safe.
+
+// const user = {
+//     name: "Adnan",
+//     greet() {
+//         return this.name;
+//     }
+// };
+// console.log(user.greet()); // "Adnan"
+
+// const add = (a,b)=>({sum:a+b});
+// console.log(add(2,3)); // { sum: 5 }
+
+// (() => {
+//     console.log("Application Started")
+// })();
+
+// (function multiplyNums(num1, num2) {
+//     console.log(num1 * num2)
+// })(5, 5);
+
+// hello();
+// const hello = function(){}; // this func throws an error, bcoz the function expression cannot be executed before initialization
+
+// hello();
+// function hello(){} // this works bcoz it can be executed before initialization, the fucntion without varible stored.
+
+// function login(name="Guest"){
+//     return name;
+// }
+// console.log(login()); // Guest
+// console.log(login("Adnan")); // Adnan
+
+// const user = {
+//     name: "Adnan", 
+//     age: 24
+// }
+// function objProp(obj) {
+//     return obj.age;
+// }
+// console.log(objProp(user))
+
+// const arr = [10, 2, 3, 4, 5]
+// const arrElem = (array) => {
+//     return array[0]
+// }
+// console.log(arrElem(arr))
+
+// Function Declaration: You define the function directly using its name. JavaScript hoists it, meaning you can call the function before it appears in your code.
+// Function Expression: You create a function and assign it to a variable. It is not hoisted, so you can only call it after the line where it is written.
+
+// Explicit Return: Uses curly braces {} and requires you to manually type the return keyword to send a value back.
+// const add = (a, b) => { return a + b; };
+// Implicit Return: Written on a single line without curly braces {}. It automatically figures out what to send back without using the return keyword.
+// const add = (a, b) => a + b; 
+
+// IIFE is an Immediately Invoked Function Expression (a function that runs the exact moment it is created). Here is what the JavaScript engine does step by step:
+// 1. Reads the Grouping Parentheses: The engine hits the starting ( wrapper, which tells it: "Treat everything inside here as a self-contained expression, not a standard function definition.
+// 2. "Compiles the Function: It reads the function block inside those brackets and builds it in memory.
+// 3. Sees the Invocation Brackets: It hits the closing trailing brackets () at the very end, which acts like hitting a "Start" button.
+// 4. Executes Immediately: The engine pauses the main code, jumps inside the IIFE, runs all the lines of code inside it right then and there, and then moves on.

@@ -148,7 +148,7 @@ function findStudentsByCity(cityname) {
         }
     })
     console.log(arr)
-    arr.forEach(item => console.log(`- ${item}`) )
+    arr.forEach(item => console.log(`- ${item.name}`) )
 }
 findStudentsByCity("Hyderabad")
 

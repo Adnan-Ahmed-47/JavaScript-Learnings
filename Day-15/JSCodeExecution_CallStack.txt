@@ -1,0 +1,65 @@
+** How does code executes in JavaScript, How does call stacks gets executed? **
+
+Execution Context
+Call Stack
+
+-> JavaScript Execution Context (whatever the file is created in js, how does it runs and executes)
+-> JavaScript runs you pragram in two 2 phases:
+
+-> Whenever you give a code, the Global execution Context gets created, and kept it in this keyword variable.
+NOTE: The browser GEC & nodejs environment GEC will be a bit different, in browser, this value will be Window Object, whereas in nodejs, it will show empty object {}
+
+-> All these code executes in thread, JS is a single threaded language, everything here is a process.
+
++++++++++++++++++++++++++++++ 
+
+1) Global Execution Context
+2) Functional Execution Context
+3) Eval Execution Context (not needed as of now)
+
+============================== JS Code Execution ============================================
+
+-> Code runs in 2 phases:
+     i) Memory Creation phase : whatever the variables you created, will be allocated space for those         declared variables, nothing will be executed here
+    ii) Execution Phase : Here the actual execution happens.
+
+-> Lets understand it with an example code:
+
+--------------------------------
+let val1 = 10
+let val2 = 5
+function addNum(num1, num2) {
+    let total = num1 + num2;
+    return total
+}
+let result1 = addNum(val1, val2)
+let result2 = addNum(10, 2)
+--------------------------------
+-> Lets see how this block of code executes in JS:
+
+1) Global Execution -> this (first GEC will be created and assigned in this keyword)
+2) Memory Creation Phase (all the variables will be created and stored here)
+   ## first cycle
+   For eg: val1 -> undefined
+           val2 -> undefined
+           addNum -> defination
+           result1 -> undefined
+           result2 -> undefined
+
+3) Execution Phase:
+   For eg: val1 <- 10
+           val2 <- 5
+           addNum -> it creates its own execution context, bcoz its a function, so it won't executes here. 
+           NOTE: The new execution environment & thread executes here and again the Memory phase & execution phase will run again for addNum() function.
+           NOTE: once this execution is done, then the execution environment will get deleted, once its assigned to GEC.
+
+           again:
+           addNum() -> again the same box with execution environment & thread is created and then same flow works
+
+++++++++++++++++++++++++++++++++ CALL STACK ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-> Call stack is basically the stack, where first GEC will be there, if we have one() & two() methods, so one() will be executed and comes outside of the stack, then two() comes in and then it also will be out after execution, this is very easy.
+-> The complexity comes when you call another function in the first function itself, then:
+    - both the functions is in the call stack, so which will come outside first? So, here the LIFO concept works, Last in first out.
+
+NOTE: You can trace the Call stack in the console inspect in browser as well

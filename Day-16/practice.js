@@ -155,3 +155,55 @@
 //      0   ==    0   ───►  true
 
 
+// ######################################### HARD QUESTIONS #############################################
+
+// function one() {
+//     two();
+// }
+// function two() {
+//     three();
+// }
+// function three() {
+//     console.log("JS");
+// }
+// one(); // JS
+
+// console.log(false == 0); // true
+
+// console.log("" == false); // true
+
+// console.log(typeof []); // object
+// console.log([] == false); // true
+
+// console.log([] === false); // false
+
+// console.log({} == {}); // false
+
+// console.log([] == []); // false
+
+// let value = null ?? undefined ?? 100 ?? 200;
+// console.log(value); // 100
+
+// console.log(Boolean(function(){})) // true
+
+// console.log(Boolean(" ")); // true
+
+// console.log(Boolean(NaN)); // false
+
+// let x = 10;
+// function add(a, b) {
+//     return a + b;
+// }
+// let result = add(5, 6);
+
+// console.log(0 ?? 10) // 0
+
+// console.log(0 || 10) // 10
+
+const user = [];
+if (user) {
+    console.log("User exists");
+}
+
+
+

@@ -84,8 +84,15 @@ function withdraw(amount) {
     }
 }
 
+// Transfer Money
+function transferMoney(amount) {
+    account.balance -= amount
+    console.log(`${amount} transferred successfully`)
+}
+
 
 checkBalance();
 deposit(3000);
 withdraw(2000);
+transferMoney(500)
 checkBalance();

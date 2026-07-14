@@ -75,19 +75,19 @@ if (temperature >= 40) {
 
 
 // Using switch
-const weather = "hot";
+const weather = "hyderabad";
 
 switch (weather) {
-    case "very hot":
+    case "secunderabad":
         console.log("Very Hot");
         break;
-    case "hot":
+    case "hyderabad":
         console.log("Hot");
         break;
-    case "pleasant":
+    case "delhi":
         console.log("Pleasant");
         break;
-    case "cold":
+    case "banglore":
         console.log("Cold");
         break;
     default:
@@ -96,12 +96,12 @@ switch (weather) {
 
 
 // Using ternary
-const temperature = 42;
+const temp = 42;
 
-temperature >= 40
+temp >= 40
     ? console.log("Very Hot")
-    : temperature >= 30
+    : temp >= 30
     ? console.log("Hot")
-    : temperature >= 20
+    : temp >= 20
     ? console.log("Pleasant")
     : console.log("Cold");

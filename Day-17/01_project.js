@@ -26,6 +26,7 @@ const user = {
     isLoggedIn: false
 }
 
+// Login
 function login(username, password) {
     if(!username || !password) {
         console.log("Please enter username and password.")
@@ -46,11 +47,24 @@ function login(username, password) {
     }
 }
 
+// Logout
+function logout() {
+    if(user.isLoggedIn) {
+        console.log(`User logged in`)
+    } else {
+        console.log(`User logged out`)
+    }
+}
+
+// Check login status
 function checkLoginStatus() {
     console.log(
         user.isLoggedIn ? "User is logged in" : "User is not logged in"
     )
 }
 
+logout()
 login("Adnan", "12345");
+logout()
 checkLoginStatus();
+logout()

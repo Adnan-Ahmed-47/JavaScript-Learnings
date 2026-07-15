@@ -50,9 +50,10 @@ function login(username, password) {
 // Logout
 function logout() {
     if(user.isLoggedIn) {
-        console.log(`User logged in`)
+        user.isLoggedIn = false;
+        console.log("Logout Successful 👋");
     } else {
-        console.log(`User logged out`)
+        console.log("User is already logged out.");
     }
 }
 

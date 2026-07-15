@@ -87,12 +87,42 @@
 
 // ---------------------------------------- Actual Solution -----------------------------------------
 
+// const customer = {
+//     name: "Adnan",
+//     cartValue: 5000
+// };
+
+// function calculateDiscount(cartValue) {
+//     let discount = 0;
+
+//     if (cartValue > 5000) {
+//         discount = 20;
+//     } else if (cartValue > 3000) {
+//         discount = 10;
+//     } else if (cartValue > 1000) {
+//         discount = 5;
+//     } else {
+//         discount = 0;
+//     }
+
+//     const finalAmount = cartValue - (cartValue * discount) / 100;
+
+//     return {
+//         discountPercentage: discount,
+//         finalPrice: finalAmount
+//     };
+// }
+
+// const result = calculateDiscount(customer.cartValue);
+// console.log(result);
+
+
 const customer = {
     name: "Adnan",
-    cartValue: 5000
-};
+    cartValue: 6000
+}
 
-function calculateDiscount(cartValue) {
+function calculateBill(cartValue) {
     let discount = 0;
 
     if (cartValue > 5000) {
@@ -101,17 +131,22 @@ function calculateDiscount(cartValue) {
         discount = 10;
     } else if (cartValue > 1000) {
         discount = 5;
-    } else {
-        discount = 0;
     }
 
-    const finalAmount = cartValue - (cartValue * discount) / 100;
+    let discountedPrice = cartValue - (cartValue * discount) / 100;
+
+    const gst = (discountedPrice * 18) / 100;
+
+    const finalAmount = discountedPrice + gst;
 
     return {
+        originalPrice: cartValue,
         discountPercentage: discount,
-        finalPrice: finalAmount
-    };
+        discountedPrice: discountedPrice,
+        gstAmount: gst,
+        finalAmount: finalAmount
+    }
 }
 
-const result = calculateDiscount(customer.cartValue);
-console.log(result);
+const result = calculateBill(customer.cartValue)
+console.log(result)

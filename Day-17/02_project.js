@@ -61,6 +61,35 @@ const account = {
     balance: 5000
 };
 
+const accountOne = {
+    name: "Adnan",
+    balance: 10000
+};
+
+const accountTwo = {
+    name: "Mannan",
+    balance: 5000
+};
+
+function transferMoney(amount) {
+    if (amount > accountOne.balance) {
+        console.log("Insufficient balance ❌");
+        return;
+    }
+    accountOne.balance -= amount;
+    accountTwo.balance += amount;
+    console.log(`₹${amount} transferred successfully ✅`);
+}
+
+function checkAccounts() {
+    console.log(accountOne);
+    console.log(accountTwo);
+}
+
+checkAccounts();
+transferMoney(3000);
+checkAccounts();
+
 // Check Balance
 function checkBalance() {
     console.log(`Current Balance: ${account.balance}`)

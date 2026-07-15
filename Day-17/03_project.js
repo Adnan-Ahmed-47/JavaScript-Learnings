@@ -75,19 +75,19 @@ if (temperature >= 40) {
 
 
 // Using switch
-const weather = "hyderabad";
+const weather = "hot";
 
 switch (weather) {
-    case "secunderabad":
+    case "very hot":
         console.log("Very Hot");
         break;
-    case "hyderabad":
+    case "hot":
         console.log("Hot");
         break;
-    case "delhi":
+    case "pleasant":
         console.log("Pleasant");
         break;
-    case "banglore":
+    case "cold":
         console.log("Cold");
         break;
     default:
@@ -105,3 +105,23 @@ temp >= 40
     : temp >= 20
     ? console.log("Pleasant")
     : console.log("Cold");
+
+
+// Check weather by city
+
+function checkWeather(city, temperature) {
+    console.log(`City: ${city}`);
+    if (temperature >= 40) {
+        console.log("Very Hot 🥵");
+    } else if (temperature >= 30) {
+        console.log("Hot ☀️");
+    } else if (temperature >= 20) {
+        console.log("Pleasant 🌤️");
+    } else {
+        console.log("Cold ❄️");
+    }
+}
+
+checkWeather("Hyderabad", 42);
+checkWeather("Delhi", 25);
+checkWeather("Kashmir", 8);

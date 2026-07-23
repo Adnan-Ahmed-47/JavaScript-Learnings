@@ -367,13 +367,137 @@ course.forEach((item) => {
 
 
 
-for(let i=1; i<=5; i++) {
-    let rowStr = "";
-    for(j=1; j<=i; j++) {
-        rowStr += j
-    }
-    console.log(rowStr)
-}
+// for(let i=1; i<=5; i++) {
+//     let rowStr = "";
+//     for(j=1; j<=i; j++) {
+//         rowStr += j
+//     }
+//     console.log(rowStr)
+// }
 
+// Flatten the array without using flat method
+// const arr = [1, [2, 3], [4, 5]]
+// console.log(arr.flat()) // using flat
+// console.log([].concat(...arr)) // using concat & spread operator
+// //using reduce
+// const nestedArray = [1, [2, 3], [4, 5]];
+// const flattened = nestedArray.reduce((accumulator, current) => {
+//   return accumulator.concat(current);
+// }, []); // [] is the starting empty array
+// console.log(flattened); 
+// // Output: [1, 2, 3, 4, 5]
+
+// //using forEach
+// const nestedArray = [1, [2, 3], [4, 5]];
+// const flattened = [];
+
+// nestedArray.forEach(item => {
+//   if (Array.isArray(item)) {
+//     // If it's an array, spread and push its contents
+//     flattened.push(...item);
+//   } else {
+//     // If it's a single number, just push it
+//     flattened.push(item);
+//   }
+// });
+// console.log(flattened); 
+// Output: [1, 2, 3, 4, 5]
+
+
+// const arr = [1, 2, 3, 3, 1, 5, 6, 3]
+// const uniqueArr = arr.reduce((acc, item) => {
+//     if(item && !acc.includes(item)) {
+//         acc.push(item)
+//     }
+//     return acc
+// }, [])
+// console.log(uniqueArr)
+
+
+// const students = [
+//   { name: "Alice", city: "New York" },
+//   { name: "Bob", city: "London" },
+//   { name: "Charlie", city: "New York" },
+//   { name: "David", city: "Paris" },
+//   { name: "Emma", city: "London" }
+// ];
+// New York: Alice, Charlie
+// London: Bob, Emma
+// Paris: David
+
+// using reduce
+// const groupedByCity = students.reduce((accumulator, student) => {
+//   const key = student.city;
+//   // If the city doesn't exist as a key yet, create an empty array for it
+//   if (!accumulator[key]) {
+//     accumulator[key] = [];
+//   }  
+//   // Push the current student into that city's array
+//   accumulator[key].push(student);
+//   return accumulator;
+// }, {}); // Start with an empty object {}
+// console.log(groupedByCity);
+
+// using forEach
+// const groupedByCity = {};
+// students.forEach((student) => {
+//   const key = student.city;
+//   if (!groupedByCity[key]) {
+//     groupedByCity[key] = [];
+//   }
+//   groupedByCity[key].push(student);
+// });
+// console.log(groupedByCity);
+
+
+
+// const cities = students.reduce((acc, item) => {
+//     if(!acc.includes(item.city)) {
+//         acc.push(`${item.city}` )
+//     }
+//     return acc;
+// }, [])
+// console.log(cities)
+// students.forEach((item) => {
+//     console.log(item.city)
+// })
+
+const shoppingBill = [
+  { name: "Laptop Sleeve", price: 300, quantity: 1 },
+  { name: "Wireless Mouse", price: 600, quantity: 2 },
+  { name: "USB-C Cable", price: 150, quantity: 3 }
+];
+function generateBill(billList) {
+    console.log("==================== INVOICE =======================")
+
+    // 1. Calculate Subtotal using reduce()
+    const subtotal = billList.reduce((acc, item) => {
+        acc += item.price * item.quantity
+        return acc
+    }, 0)
+
+    // 2. Calculate 18% GST Tax
+    const tax = subtotal * 0.18;
+
+    // 3. Apply 10% Discount if subtotal is over 1000
+    const discount = subtotal > 1000 ? subtotal*0.10 : 0;
+
+    // 4. Calculate final total
+    const finalTotal = subtotal + tax - discount;
+
+    // Print Summary Financials
+    console.log("----------------");
+    console.log(`Subtotal:      ₹${subtotal.toFixed(2)}`);
+    console.log(`GST (18%):     ₹${tax.toFixed(2)}`);
+    if (discount > 0) {
+      console.log(`Discount (10%):-₹${discount.toFixed(2)}`);
+    }
+    console.log("----------------");
+    console.log(`GRAND TOTAL:   ₹${finalTotal.toFixed(2)}`);
+    console.log("================");
+
+
+} 
+generateBill(shoppingBill)
 
 

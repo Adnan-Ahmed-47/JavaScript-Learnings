@@ -1,0 +1,83 @@
+1. Traditional Loops (Control Flow)
+These are statements, not methods. They control code execution and support break (stop loop entirely) and continue (skip to next turn).
+
+for
+What it does: Runs a block of code using a manual counter/index variable.
+Syntax: for (let i = 0; i < arr.length; i++)
+Example:
+
+for (let i = 0; i < 3; i++) { console.log(i); } // Logs 0, 1, 2
+=================================================================
+for...of
+What it does: Iterates directly over the values of an iterable (Arrays, Strings, Maps).
+Syntax: for (const value of array)
+Example:
+
+const fruits = ["🍎", "🍌"];
+for (const fruit of fruits) { console.log(fruit); } // Logs "🍎", "🍌"
+=================================================================
+for...in
+What it does: Iterates over the keys/properties of an Object (or indices of an Array).
+Syntax: for (const key in object)Warning: Avoid using this for arrays; it loops over index strings and can check prototype chains.
+Example:
+
+const user = { name: "A", age: 20 };
+for (const key in user) { console.log(key); } // Logs "name", "age"
+
+
+-----------------------------------------------------------------------------------
+2. Basic Array Methods (Side Effects)
+These are built-in array prototype methods. You cannot stop them with break or continue.
+forEach
+What it does: Runs a callback function once for every element in the array.
+Return value: Always returns undefined. It changes nothing on its own; you use it to cause "side effects" (like saving to a database, pushing to an outside array, or altering properties).
+Example:
+
+const numbers =;
+numbers.forEach(num => console.log(num * 2)); // Just prints 2, 4
+
+-----------------------------------------------------------------------------------
+3. Functional Array Methods (Data Transformation)
+These methods do not modify your original array. Instead, they read your data, apply logic, and generate clean new outputs.
+
+map
+What it does: Transforms every item in an array into something new. The output array will always have the exact same length as the original array.
+Return value: A brand new array containing the transformed elements.
+Example:
+
+const numbers =;
+const doubled = numbers.map(num => num * 2); 
+console.log(doubled); // Output: [2, 4, 6]
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+filter
+What it does: Evaluates each item against a True/False condition. If the condition is True, the item stays. If False, it gets dropped.
+Return value: A new array containing only the items that passed the test.
+Example:
+
+const scores =;
+const passed = scores.filter(score => score >= 35);
+console.log(passed); // Output: [40, 85]
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+reduce
+What it does: Processes the entire array down to a single outcome value. It keeps a running tally (accumulator) from index to index.
+Return value: A single output (could be a number, a string, an object, or a flattened array).
+Example:
+
+const expenses =;
+const total = expenses.reduce((sum, current) => sum + current, 0);
+console.log(total); // Output: 350
+
+
+
+
+Key Summary Rules to Remember
+
+1. If you need to stop early based on a condition, use for or for...of.
+2. If you want to modify your elements or convert them into a new format, use map.
+3. If you want to strip items away based on criteria, use filter.
+4. If you want to combine everything into one final result, use reduce.
+
+
+

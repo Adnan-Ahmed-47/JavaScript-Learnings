@@ -498,6 +498,35 @@ function generateBill(billList) {
 
 
 } 
-generateBill(shoppingBill)
+// generateBill(shoppingBill)
+
+
+
+const prices = [2000, 1000, 1200, 700];
+
+function totalPrice(priceList) {
+    const total = priceList.reduce((acc, price) => {
+        acc += price
+        return acc
+    }, 0)
+
+    return `Total Price: ${total}`;
+}
+// console.log(totalPrice(prices))
+
+
+
+
+const arr = [1,2,3,4,5];
+
+const newArr = arr
+                .map((item) => item * 10)  // [10, 20, 30, 40, 50]
+                .map((item) => item + 5)   // [15, 25, 35, 45, 55]
+                .filter((item) => item > 30) // [35, 45, 55]
+
+console.log(newArr)
+
+
+
 
 

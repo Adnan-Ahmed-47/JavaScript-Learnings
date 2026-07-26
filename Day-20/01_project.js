@@ -75,18 +75,63 @@ createAccount("ACC-2026-01", "Adnan Ahmed", "adnan01@example.com", "Savings", 30
 
 // Deposit Money
 function depositMoney(accId, money) {
-    const accountToDeposit = findAccount(accId)
-    console.log('Ad', accountToDeposit)
-
-    if(accountToDeposit) {
-        accountToDeposit.balance += money
-        accountToDeposit.transactions.push({
-            
-        })
+    if(money <= 0) {
+        console.log("❌ Error: Deposit amount must be greater than zero.")
+        return false;
     }
-    return accountToDeposit;
+
+    const account = findAccount(accId)
+    if(!account) {
+        console.log(`❌ Error: Account ${accountId} not found.`)
+        return false;
+    }
+
+    account.balance += money
+    account.transactions.push({
+        type: "Deposit",
+        amount: money,
+        date: new Date().toLocaleDateString(),
+        details: "Self cash/check deposit"
+    })
+    
+    console.log(`💵 Deposited $${money} to ${account.accountHolder}. New Balance: $${account.balance.toFixed(2)}`);
+    return true;
 }
-depositMoney("ACC-2026-01", 500)
+console.log(depositMoney("ACC-2026-01", 500))
+
+
+// Withdraw Money
+function withdrawMoney(accId, money) {
+    if(money <= 0) {
+        console.log("❌ Error: Withdraw amount must be greater than zero.")
+        return false;
+    }
+
+    const account = findAccount(accId)
+    if(!account) {
+        console.log(`❌ Error: Account ${accountId} not found.`)
+        return false;
+    }
+
+    // Check if account has enough funds
+    if(account.balance < money) {
+        console.log(`❌ Error: Insufficient funds for ${account.accountHolder}. Current Balance: $${account.balance.toFixed(2)}`)
+        return false;
+    }
+
+    account.balance -= money
+    account.transactions.push({
+        type: "Withdrawal",
+        amount: money,
+        date: new Date().toLocaleDateString(),
+        details: "ATM/Counter withdrawal"
+    })
+    
+    console.log(`💵 Withdrew $${money} to ${account.accountHolder}. Remaining Balance: $${account.balance.toFixed(2)}`);
+    return true;
+}
+console.log(withdrawMoney("ACC-2026-9011", 600))
+
 
 
 // // Deposit Money

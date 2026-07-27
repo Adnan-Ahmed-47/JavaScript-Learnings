@@ -133,6 +133,12 @@ function withdrawMoney(accId, money) {
 console.log(withdrawMoney("ACC-2026-9011", 600))
 
 
+// Transfer Money
+function transfer() {
+    
+}
+
+
 
 // // Deposit Money
 // function depositMoney(accId, money) {

@@ -134,9 +134,40 @@ console.log(withdrawMoney("ACC-2026-9011", 600))
 
 
 // Transfer Money
-function transfer() {
-    
+function findSenderAccount(id) {
+    const account = bankUserAccounts.filter((item) => item.accountId === id)
+    return account
 }
+function findReceiverAccount(id) {
+    const account = bankUserAccounts.filter((item) => item.accountId === id)
+    return account
+}
+function transfer(senderid, receiverid, amount) {
+    if(amount <= 0) {
+        console.log("❌ Error: Transfer amount must be greater than zero.")
+        return false;
+    }
+
+    const senderAcc = findSenderAccount(senderid)
+    if(!senderAcc) {
+        console.log(`❌ Error: Sender Account ${accountId} not found.`)
+        return false;
+    }
+
+    if(amount >= senderAcc.balance) {
+        senderAcc.balance -= amount;
+        account.transactions.push({
+            type: "Transfer",
+            amount: amount,
+            date: new Date().toLocaleDateString(),
+            details: "Self Transfer"
+        })
+    }
+
+    const receiverAcc = findReceiverAccount(receiverid)
+}
+
+console.log(transfer(bankUserAccounts, "ACC-2026-9011", "ACC-2026-01", 200))
 
 
 

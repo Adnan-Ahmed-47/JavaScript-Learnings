@@ -134,40 +134,57 @@ console.log(withdrawMoney("ACC-2026-9011", 600))
 
 
 // Transfer Money
-function findSenderAccount(id) {
-    const account = bankUserAccounts.filter((item) => item.accountId === id)
-    return account
-}
-function findReceiverAccount(id) {
-    const account = bankUserAccounts.filter((item) => item.accountId === id)
-    return account
-}
+
 function transfer(senderid, receiverid, amount) {
     if(amount <= 0) {
         console.log("❌ Error: Transfer amount must be greater than zero.")
-        return false;
+        return;
     }
 
-    const senderAcc = findSenderAccount(senderid)
+    const senderAcc = findAccount(senderid)
+    const receiverAcc = findAccount(receiverid)
+
     if(!senderAcc) {
-        console.log(`❌ Error: Sender Account ${accountId} not found.`)
-        return false;
+        console.log(`❌ Error: Sender Account ${senderid} not found.`)
+        return;
+    }
+    if(!receiverAcc) {
+        console.log(`❌ Error: Receiver Account ${receiverid} not found.`)
+        return;
     }
 
-    if(amount >= senderAcc.balance) {
-        senderAcc.balance -= amount;
-        account.transactions.push({
-            type: "Transfer",
-            amount: amount,
-            date: new Date().toLocaleDateString(),
-            details: "Self Transfer"
-        })
+    // Deduct from sender if funds are available
+    if (senderAcc.balance < amount) {
+        console.log(`❌ Error: Transfer failed. Insufficient funds in ${senderAcc.accountHolder}'s account.`);
+        return;
     }
 
-    const receiverAcc = findReceiverAccount(receiverid)
+    // Complete transfer execution
+    senderAcc.balance -= amount;
+    receiverAcc.balance += amount;
+
+    // Log transaction for senderAcc
+    senderAcc.transactions.push({
+        type: "Transfer Out",
+        amount: amount,
+        date: new Date().toLocaleDateString(),
+        details: `Sent to ${receiverAcc.accountHolder}`
+    });
+
+    // Log transaction for receiverAcc
+    receiverAcc.transactions.push({
+        type: "Transfer In",
+        amount: amount,
+        date: new Date().toLocaleDateString(),
+        details: `Received from ${senderAcc.accountHolder}`
+    });
+
+    console.log(`🔄 Transfer Success: $${amount} moved from ${senderAcc.accountHolder} to ${receiverAcc.accountHolder}.`);
+    return true;
+
 }
 
-console.log(transfer(bankUserAccounts, "ACC-2026-9011", "ACC-2026-01", 200))
+console.log(transfer("ACC-2026-9011", "ACC-2026-01", 200))
 
 
 

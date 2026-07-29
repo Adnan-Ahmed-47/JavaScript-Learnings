@@ -41,7 +41,7 @@ const bankUserAccounts = [
     accountHolder: "Amara Diallo",
     email: "amara.d@example.com",
     accountType: "Savings",
-    balance: 850.00,
+    balance: 5850.00,
     transactions: []
   }
 ];
@@ -188,24 +188,65 @@ console.log(transfer("ACC-2026-9011", "ACC-2026-01", 200))
 
 
 
-// // Deposit Money
-// function depositMoney(accId, money) {
-//     const user = bankUserAccounts.forEach((item) => {
-//         if(item.accountId === accId) {
-//             item.balance += money
-//             item.transactions.push(`Depositted Amount: ${money}`)
-//         }
-//     })
-//     console.log(user)
-//     if(user) {
-//         console.log(`Successfully Deposited $${money} to ${item.accountHolder}. New balance: $${item.balance}`)
-//     } else {
-//         console.log(`Account not Found`)
-//     }
+// Print Transaction History
 
-//     return bankUserAccounts
-// }
-// console.log(depositMoney("ACC-2026-03", 500))
+function printTransactionHistory(accountId) {
+    const account = findAccount(accountId);
+    if(!accountId) {
+        console.log(`❌ Error: Account ${accountId} not found.`)
+    }
+
+    console.log(`\n=====================================================================`)
+    console.log(`📜 TRANSACTION HISTORY FOR: ${account.accountHolder.toUpperCase()} (${account.accountId})`)
+    console.log(`=====================================================================`)
+
+    if(account.transactions.length === 0) {
+        console.log(`  No recent transactions found on this account`)
+    } else {
+        // Loop through history array to display logs
+        account.transactions.forEach((item, index) => {
+            console.log(`${index + 1}. [${item.date}] ${item.type}: $${item.amount.toFixed(2)} | Description: ${item.details}`)
+        })
+    }
+
+    console.log(`--------------------------------------------------`);
+    console.log(`Current Ending Balance: $${account.balance.toFixed(2)}\n`);
+    return true;
+}
+
+console.log(printTransactionHistory("ACC-2026-9011"))
+
+
+// Find Richest Account
+
+function findRichestAccount() {
+    if(bankUserAccounts.length === 0) {
+        console.log(`No accounts exist in the bank database.`)
+        return null;
+    }
+
+    const richest = bankUserAccounts.reduce((prevMax, currentAcc) => {
+        return (currentAcc.balance > prevMax.balance) ? currentAcc : prevMax;
+    });
+
+    console.log(`👑 Richest Account Holder: ${richest.accountHolder} with a balance of $${richest.balance.toFixed(2)}`);
+    return richest
+}
+findRichestAccount()
+// console.log(findRichestAccount())
+
+
+// Calculate Total Bank Balance
+function calculateBankBalance() {
+    const bankBalance = bankUserAccounts.reduce((acc, currItem) => {
+        // acc += currItem.balance
+        return acc + currItem.balance
+    }, 0)
+
+    console.log(`The total liquidity across all accounts in the bank is $${bankBalance}.`)
+    return bankBalance;
+}
+calculateBankBalance()
 
 
 

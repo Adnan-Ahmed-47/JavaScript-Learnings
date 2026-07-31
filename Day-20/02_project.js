@@ -104,8 +104,8 @@ function addStudent(...details) { // returns an array with the values
     studentRecords.push(studentObj)
     return studentRecords
 }
-// console.log(addStudent("STU-2026-004", "Yuki Tanaka", 19, "Tokyo", "Computer Science", 73.0, true))
-// console.log(addStudent("STU-2026-005", "Zanele Dlamini", 20, "Cape Town", "Data Science", 87.4, false))
+console.log(addStudent("STU-2026-004", "Yuki Tanaka", 19, "Tokyo", "Computer Science", 73.0, true))
+console.log(addStudent("STU-2026-005", "Zanele Dlamini", 20, "Cape Town", "Data Science", 87.4, false))
 
 
 // Feature 2: Remove students
@@ -130,7 +130,51 @@ function findTopper() {
     }, topper)
     return topper;
 }
-console.log(findTopper())
+// console.log(findTopper())
+
+
+// Feature 3: Find failed students
+function failedStudent() {
+    const failure = studentRecords.filter((item) => item.grades < 45)
+    return failure
+}
+// console.log(failedStudent())
+
+
+// Feature 4: Calculate average
+function calculateAverage() {
+    let totalAverage;
+    let length = studentRecords.length;
+    const average = studentRecords.reduce((acc, item) => {
+        return acc += item.grades
+    }, 0)
+    // console.log(average)
+    totalAverage = average/length;
+    console.log(`The average grades of all the students: ${totalAverage}`)
+    return totalAverage;
+}
+calculateAverage()
+
+
+// Feature 5: Search by city
+function searchByCity(city) {
+    const searchCity = studentRecords.filter((student) => student.city === "Mumbai");
+    return searchCity
+}
+console.log(searchByCity("Mumbai"))
+
+
+// Feature 6: Count students by course
+function countStudents(course) {
+    let len = 0
+    const courseStudents = studentRecords.filter((item) => {
+        if(item.course === course) {
+            len++
+        }
+    })
+    console.log(`The number of students of ${course}: ${len} `)
+}
+countStudents("Computer Science")
 
 
 

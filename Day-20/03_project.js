@@ -105,26 +105,72 @@ function calculateCart() {
     const totalValue = ecomProducts.reduce((acc, currVal) => {
         return acc = acc + currVal.price * currVal.stock
     }, 0)
-    console.log(`Total Cart Value: $${totalValue}`)
+    // console.log(`Total Cart Value: $${totalValue}`)
     return totalValue
 }
-calculateCart()
+console.log(`Total Cart Value: $${calculateCart()}`)
 
 
 // Feature 5: Apply Discount
-function discount() {
-    const total = calculateCart();
-    let discountedAmount;
-    if(total > 5000) {
-        discountedAmount = total * (10/100)
-        console.log(`Congrats! You've got the discount of 10%`)
-    } else if (total > 3000 && total < 5000) {
-        discountedAmount = total * (5/100)
-        console.log(`Congrats! You've got the discount of 5%`)
+function calculateDiscount() {
+    const cartValue = calculateCart();
+
+    let discount = 0;
+    if(cartValue > 5000) {
+        discount = 10;
+    } else if (cartValue > 3000) {
+        discount = 5;
+    } else if (cartValue > 1000) {
+        discount = 2;
     }
 
-    let grandTotal = total - discountedAmount;
-    return grandTotal;
+    let discountedPrice = (cartValue * discount) / 100;
+
+    let finalAmount = cartValue - discountedPrice;
+
+    return {
+        originalPrice: cartValue,
+        discountPercentage: discount,
+        discountedPrice: discountedPrice,
+        // gstAmount: gst,
+        finalAmount: finalAmount
+    }    
+
+    // let grandTotal = total - discountedAmount;
+    // console.log(`Whoo! You've got 10% discount on your bill. The total bill is $${total}, the bill after discount is $${grandTotal}`)
+    // return discountedPrice;
 
 }
-console.log(discount())
+const result = calculateDiscount()
+console.log(result)
+
+
+// Feature 6: Calculate GST
+function calculateGST() {
+    const cartValue = calculateCart();
+
+    const gst = ((cartValue * 18) / 100).toFixed(2);
+
+    return gst;
+}
+const gst = calculateGST();
+console.log(`gst Amount: $${gst}`)
+
+
+// Feature 6: Calculate GST
+function calculateFinalBill() {
+    const cartValue = calculateCart();
+    // console.log(cartValue, "cartValue") // 8424.9
+
+    const discountValue = calculateDiscount();
+    // console.log(discountValue.discountedPrice, "discountValue") // 842.49
+
+    const gst = ((cartValue * 18) / 100);
+    // console.log(gst, "gst") // 1516.48
+
+    const totalAmount = ((cartValue + gst) - discountValue.discountedPrice).toFixed(2);
+
+    return totalAmount;
+}
+const bill = calculateFinalBill();
+console.log(`The total bill after applying discount & GST: $${bill}`)

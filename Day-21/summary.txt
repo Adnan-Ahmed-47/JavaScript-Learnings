@@ -1,0 +1,25 @@
+// DOM (Document Object Model)
+-> The Document which is made, is made up of what model/HTML, what's its structure, how the page looks etc, so that we can manipulate that page.
+
+// On inspect:
+// console.log(window) -> its basically an object
+// console.log(window.document)
+// console.log(document)
+// console.dir(document) -> gets all the hidden information
+
+
+// Built a DOM of the html file, in excalidraw.
+
+-> So, we have taken a small webpage, but the DOM is still complex.
+-> main jo baat hai DOM mein, ham pata laga sakte hain ki kis sibling ya element pe jaana hai, agar multiple elements hai div ke, toh konse div pe jaana hai, I mean the id etc, pata kar sakte hain
+
+NOTE: HTML Collections, Node Collections, Array are all different.
+
+// We can access/manipulate a webpage 
+console.log(document.links[2])
+
+
+-> we have selected the name of Brendan Eich and manipulated to my name by consoling the id in the console. 
+
+document.getElementById("firstHeading")
+document.getElementById("firstHeading").innerHTML = "<h1>Chai aur code</h1>"

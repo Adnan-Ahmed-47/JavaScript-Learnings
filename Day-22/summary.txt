@@ -1,0 +1,91 @@
+// To access the element in DOM, we use: getElementById is a method, and it accepts a parameter
+
+document.getElementById('title'); // the return expresssion will be value, as:
+<h1 id= "title" class= "heading">DOM learning on Chai aur code</h1>
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// we can also access any attribute from it:
+document.getElementById('title').id
+'title'
+
+document.getElementById('title').class
+undefined
+
+document.getElementById('title').className
+'heading'
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// we can also use getAttribute() method to get the attributes of the element.
+document.getElementById('title').getAttribute('id')
+'title'
+
+document.getElementById('title').getAttribute('class')
+'heading'
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// we can also setAttribute()
+document.getElementById('title').setAttribute('class', 'test') // it overrides heading with test
+undefined
+
+document.getElementById('title').setAttribute('class', 'test heading')
+undefined
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// We can also set styling from this:
+const title = document.getElementById('title');
+title.style.backgroundColor = 'green'
+'green'
+
+title.style.padding = '10px'
+'10px'
+
+title.style.borderRadius = '10px'
+'10px'
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Till now we have seen how to get the attributes from the elements, but  now we'll see how we'll access the element value
+
+title.textContent
+'DOM learning on Chai aur code'
+
+title.innerHTML
+'DOM learning on Chai aur code'
+
+title.innerText
+'DOM learning on Chai aur code'
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// The difference between all these three are:
+
+title.innerText
+'DOM learning on Chai aur code test text'
+title.textContent
+'DOM learning on Chai aur code test text'
+title.innerHTML
+'DOM learning on Chai aur code <span>test text</span>'
+
+
+title.innerText // only the visible text will be displayed
+'DOM learning on Chai aur code'
+title.textContent // you'll get all the content if it is display none also.
+'DOM learning on Chai aur code test text'
+title.innerHTML  // you'll get even the inner HTML with the element also.
+'DOM learning on Chai aur code <span style="display: none">test text</span>'
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+document.getElementsByClassName("heading")
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.querySelector
+
+document.querySelector("h1") // only the first h1 will be displayed
+
+document.querySelector('#title') // we can select it by id
+document.querySelector('.heading') // we can select it by className
+
+document.querySelector('input[type="password"]')
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+document.querySelector('ul')
+const myul = document.querySelector('ul')
+myul.querySelector('li')
+const liList =myul.querySelector('li')
+liList.style.backgroundColor = 'green'
+
+liList.innerText = 'five'
+

@@ -174,3 +174,11 @@ function scorecard() {
 
 }
 scorecard()
+
+
+
+// Summary
+// 1) .padEnd(number): This pads strings with empty spaces up to a specified length, ensuring columns perfectly align vertically like a table grid.
+// 2) .toString(): Numbers must be converted to strings before you can use .padEnd() on them.
+// 3) Ternary Operator (item.isOut ? "OUT" : "NOT OUT"): Converts the system boolean flag into legible data.
+// 4) forEach instead of map: map() creates and returns a brand new array. Since you are only printing logs to the terminal and not creating a new array, forEach is the correct semantic loop choice.

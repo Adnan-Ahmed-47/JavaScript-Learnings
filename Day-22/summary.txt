@@ -89,3 +89,68 @@ liList.style.backgroundColor = 'green'
 
 liList.innerText = 'five'
 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// we have one more method to get all the elements:
+
+myul.querySelectorAll('li'); // you get all the li's and we get the NodeList in return, where we can loop.
+const tempLiList = myul.querySelectorAll('li')
+tempLiList.forEach(li => {
+    console.log(li)
+})
+
+tempLiList.forEach(function(li) {
+    li.style.backgroundColor = 'pink'
+})
+
+NOTE: NodeList, HTMLCollection are not arrays. Bcoz, in arrays we also get map method in Prototype, but in NodeList we don't.
+
+allLiList.style.color = 'red' // this gives error 
+allLiList[1].style.color = 'red'
+'red'
+
+
+const myH1 = document.querySelectorAll('h1');
+myH1.style.color = 'orange'; // gives error
+myH1[0].style.color = 'orange'; // this works
+
+
+const myH2 = document.querySelectorAll('h2')
+myH2.style.bgcolor = 'pink' // gives error
+myH2[1].style.backgroundColor = 'pink'
+'pink'
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Now lets use getElementsByClassName(), we get HTMLCollection in return, but it doesn't provide use forEach as well, because NodeList & HTMLCollection is different. If u want to apply loop you need to convert it into an array and then you can use loop.
+
+const myClassList = document.getElementsByClassName('list-item')
+
+// To convert HTMLcollection to an array we use:
+const myConvertedArray = Array.from(myClassList)
+myConvertedArray.forEach(item => {
+  item.style.backgroundColor = 'orange'
+})
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Javascript wikipedia page, manipulating the page values
+
+const allH3 = document.querySelectorAll('h3')
+allH3[0].innerText
+'Creation at Netscape'
+
+document.querySelectorAll('.mw-heading')
+got node list
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Important Points to Note:
+
+1) HTMLCollection -> not an array, it doesn't even allow us to forEach, we can change it to array by using Array.from(HTMLCollection)
+2) NodeList -> not an array, it allows us to forEach, Array.from(NodeList)
+3) Array
+
+Difference b/w innerText, innerHTML, textContent
+
+

@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Node List</title>
+ </head>
+ <body style="background-color: #212121; color: #fff;">
+    
+ </body>
+
+ <script>
+    // To create a div element or an element programmatically 
+    // const h1 = document.createElement('h1'); // <h1></h1>
+    const div = document.createElement('div'); // <div></div>
+    console.log(div) // but till now we aren't able to see it in our screen
+
+    // Now, I want to add some attributes to this div, as its a Node List, nodelist have so many attributes already
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1) 
+    div.setAttribute("title", "generated title") // you can also set custom attributes to an element
+
+    div.style.backgroundColor = "green";
+    div.style.padding = "10px";
+    // div.innerHTML = "Chai aur code"
+
+    // NOTE: Till now we've added so many things into element, but its not displaying in the screen, which means, its added inside the memory, the div, its not on the page. So, when can we see it in a page? When you say the document to attach this.
+
+
+    // --------------------------------------------------
+    // Most of the devs prefer setAttribute option, bcoz .className or .innerText actually overrides the text, so whatever the values is there, it first selects it and get it and then sets it, so this is the 2 step process, on the other hand, the setAttributes directly sets it, so one round trip will be saved.
+
+    // So, most of them prefer this:
+    const addText = document.createTextNode("Chai aur code") 
+    // Now we'll add this node into the div
+    div.appendChild(addText)
+
+    document.body.appendChild(div)
+
+
+// --------------------------------------------------------------------
+    // const div = document.createElement('div');
+    // console.log(div)
+    // div.className = "main"
+    // div.id = Math.round(Math.random() * 10 + 1) 
+    // div.setAttribute("title", "generated title") 
+    // div.style.backgroundColor = "green";
+    // div.style.padding = "10px";
+    // div.innerHTML = "Chai aur code"
+    // const addText = document.createTextNode("Chai aur code") 
+    // div.appendChild(addText)
+    // document.body.appendChild(div)
+ </script>
+ </html>
+
+ 

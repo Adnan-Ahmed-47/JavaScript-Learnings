@@ -7,6 +7,7 @@
 </head>
 <body style="background-color: #212121; color: #fff;">
     <div class="parent">
+        <!-- This is a comment -->
         <div class="day">Monday</div>
         <div class="day">Tuesday</div>
         <div class="day">Wednesday</div>
@@ -41,8 +42,17 @@
     // console.log(dayOne.parentElement) // to get the parent element from child
     // console.log(dayOne.nextElementSibling) 
 
+    // NodeList -> Its basically a tree structure in DOM, we got 9 nodes, bcoz its a proper tree structure, but behind the scenes, though we have only 4 elements, but the browser is showing it as text when you hit enter and then another div.day
 
-    
+    // Only one linebreak counts. When we add a comment, we get 11 nodes list.
+    console.log("NODES: ", parent.childNodes); // 9 
+
+    // So, till now we are done with the traversing part, now lets move to other thing, 
+
+    // How to create a Node List programmatically
+
+
+
 
 
 

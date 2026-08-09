@@ -11,13 +11,42 @@
     </ul>
 </body>
 <script>
+    // This is the basic simple method people think of, first create li, and then add innerHTML to it, so now the element is created, now you can attach it in the document, by selecting the parent or something, wherever you want to attach it.
+    // But there's a small problem with this approach, bcoz, we were having only one li in this document, so whenever we say to appendChild the another value, by selecting it and then adding it, inorder to do this, we need to traverse a whole tree everytime, becoz we r trying to go to end completely by traversing the tree again and again, so there may be an optimization issue occuring.
+    // Basic Approach
     function addLanguage(langName) {
         const li = document.createElement('li')  // <li></li>
-        li.innerHTML = `${langName}`;
-
+        li.innerHTML = `${langName}`; // all the elements will be traversed in this case
         document.querySelector('.language').appendChild(li)
     } 
     addLanguage("Python")
     addLanguage("Typescript")
+
+
+    // Optimized approach: The work is same, but the below approach is optimized, bcoz we not need to traverse the whole tree here
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)        
+    }
+    addOptiLanguage('golang')
+
+    // ------------------------------------------------------------------------------
+    // Edit - to change the element
+    const secondLang = document.querySelector('li:nth-child(2)') // to select the python li
+    // secondLang.innerHTML = "Mojo"
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+    // edit
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>Java</li>'
+
+    // ------------------------------------------------------------------------------
+    // remove - to remove an element
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
 </script>
 </html>

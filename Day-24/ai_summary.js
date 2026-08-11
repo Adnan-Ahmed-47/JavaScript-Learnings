@@ -100,3 +100,89 @@ There are many ways.
      NodeList(4)
 
 */
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/*
+- HTMLCollection vs NodeList vs Array
+
+-> Array --> ✔ map() ✔ filter() ✔ reduce() ✔ forEach() Everything works.
+
+-> HTMLCollection --> Returned by 
+                        getElementsByClassName() 
+                        children 
+                      It looks like an array. But it isn't.
+                      ❌ map()
+                      ❌ filter()
+                      ❌ reduce()
+                      ❌ forEach()
+                    Need
+                    Array.from(collection)
+
+-> NodeList --> Returned by
+                        querySelectorAll()
+                NodeList supports
+                    ✔ forEach()
+                But
+                    ❌ map()
+                    ❌ filter()
+                    ❌ reduce()
+                If needed
+                    Array.from(nodeList)
+
+** Memory Trick
+    HTMLCollection
+    ↓
+    Old DOM API
+    ↓
+    Convert to Array
+    ----------------------
+    NodeList
+    ↓
+    Modern DOM API
+    ↓
+    forEach available
+
+*/
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/*
+- innerText vs textContent vs innerHTML
+
+-> This is extremely important.
+    Suppose:
+    <h1>
+        Hello
+        <span style="display:none">
+            World
+        </span>
+    </h1>
+
+- innerText
+    Shows only visible text.
+    Hello
+- textContent
+    Shows everything.
+    Hello World
+    Even hidden text.
+- innerHTML
+    Returns HTML itself.
+    Hello
+    <span>
+        World
+    </span>
+
+
+- Memory Trick
+    innerText
+    ↓
+    What user sees
+
+    textContent
+    ↓
+    Everything
+
+    innerHTML
+    ↓
+    HTML + Text
+
+*/

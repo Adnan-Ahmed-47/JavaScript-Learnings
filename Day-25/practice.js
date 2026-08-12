@@ -1,3 +1,4 @@
+// +++++++++++++++++++++++++++++++++ EASY QUESTIONS ++++++++++++++++++++++++++++++++++++++++++
 const h1 = document.getElementById('heading1');
 console.log(h1)
 h1.innerHTML = 'Welcome to JavaScript';
@@ -21,3 +22,5 @@ liItems.forEach((li) => {
     console.log(li.textContent);
     console.log(li.innerHTML);
 });
+
+// +++++++++++++++++++++++++++++++++ MEDIUM QUESTIONS ++++++++++++++++++++++++++++++++++++++++++

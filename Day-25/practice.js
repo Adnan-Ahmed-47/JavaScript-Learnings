@@ -44,7 +44,7 @@ document.querySelector('body').appendChild(btn)
 
 const ul = document.createElement('ul')
 ul.setAttribute('class', 'language')
-console.log(ul)
+// console.log(ul)
 document.querySelector('body').appendChild(ul)
 function addLanguages(langName) {
     const liItem = document.createElement('li')
@@ -52,5 +52,42 @@ function addLanguages(langName) {
     document.querySelector('.language').appendChild(liItem)
 }
 addLanguages('Java')
+addLanguages('Swift')
 addLanguages('JavaScript')
+addLanguages('React')
 addLanguages('Python')
+
+
+const secondLang = document.querySelector('ul:nth-of-type(2) li:nth-child(2)')
+// console.log(secondLang)
+secondLang.innerHTML = "Rust"
+
+
+const firstLang = document.querySelector('ul:nth-of-type(2) li:nth-child(1)')
+firstLang.outerHTML = "<li>React Native</li>"
+
+
+const lastLang = document.querySelector('ul:nth-of-type(2) li:last-child')
+lastLang.remove()
+// console.log(lastLang)
+
+
+const newLi = document.querySelector('.language')
+    const firstLi = newLi.querySelector('li:first-child')
+    const lastLi = newLi.querySelector('li:last-child')
+    // console.log(firstLi.textContent)
+    // console.log(lastLi.textContent)
+
+
+const secondLi = newLi.querySelector('li:nth-child(2)')
+// console.log(secondLi)
+// console.log(secondLi.parentNode)
+// console.log(secondLi.parentElement)
+
+// console.log(secondLi.nextSibling)
+
+
+const ulList = document.getElementsByClassName('.language')
+console.log(ulList)
+
+

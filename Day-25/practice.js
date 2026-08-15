@@ -87,7 +87,34 @@ const secondLi = newLi.querySelector('li:nth-child(2)')
 // console.log(secondLi.nextSibling)
 
 
-const ulList = document.getElementsByClassName('.language')
-console.log(ulList)
+const ulList = document.getElementsByClassName('numbers')
+// const ulList = document.querySelector('.numbers')
+// console.log(ulList)
+console.log(ulList[0].children)
+
+
+
+
+const arr = Array.from(ulList)
+const newAr = arr.map((li) => {
+    console.log(li.textContent)
+})
+console.log(arr)
+
+
+const div = document.createElement('div')
+div.setAttribute('class', 'container')
+div.setAttribute('id', 'box')
+div.style.backgroundColor = 'brown'
+div.style.color = 'white'
+div.style.padding = "10px"
+div.textContent = "This is the div container."
+document.querySelector('body').appendChild(div)
+console.log(div)
+
+// +++++++++++++++++++++++++++++++++ HARD QUESTIONS ++++++++++++++++++++++++++++++++++++++++++
+
+
+
 
 

@@ -25,95 +25,102 @@
 
 // +++++++++++++++++++++++++++++++++ MEDIUM QUESTIONS ++++++++++++++++++++++++++++++++++++++++++
 
-const h2 = document.createElement('h2')
-h2.innerHTML = "Heading Two"
+// const h2 = document.createElement('h2')
+// h2.innerHTML = "Heading Two"
 
-document.querySelector('body').appendChild(h2)
-
-
-const btn = document.createElement('button')
-btn.innerHTML = "Click Me"
-document.querySelector('body').appendChild(btn)
-// console.log(btn)
-
-// const liItem = document.createElement('li')
-// liItem.innerHTML = "React"
-
-// document.querySelector('ul').appendChild(liItem)
+// document.querySelector('body').appendChild(h2)
 
 
-const ul = document.createElement('ul')
-ul.setAttribute('class', 'language')
-// console.log(ul)
-document.querySelector('body').appendChild(ul)
-function addLanguages(langName) {
-    const liItem = document.createElement('li')
-    liItem.innerHTML = langName;
-    document.querySelector('.language').appendChild(liItem)
-}
-addLanguages('Java')
-addLanguages('Swift')
-addLanguages('JavaScript')
-addLanguages('React')
-addLanguages('Python')
+// const btn = document.createElement('button')
+// btn.innerHTML = "Click Me"
+// document.querySelector('body').appendChild(btn)
+// // console.log(btn)
+
+// // const liItem = document.createElement('li')
+// // liItem.innerHTML = "React"
+
+// // document.querySelector('ul').appendChild(liItem)
 
 
-const secondLang = document.querySelector('ul:nth-of-type(2) li:nth-child(2)')
-// console.log(secondLang)
-secondLang.innerHTML = "Rust"
+// const ul = document.createElement('ul')
+// ul.setAttribute('class', 'language')
+// // console.log(ul)
+// document.querySelector('body').appendChild(ul)
+// function addLanguages(langName) {
+//     const liItem = document.createElement('li')
+//     liItem.innerHTML = langName;
+//     document.querySelector('.language').appendChild(liItem)
+// }
+// addLanguages('Java')
+// addLanguages('Swift')
+// addLanguages('JavaScript')
+// addLanguages('React')
+// addLanguages('Python')
 
 
-const firstLang = document.querySelector('ul:nth-of-type(2) li:nth-child(1)')
-firstLang.outerHTML = "<li>React Native</li>"
+// const secondLang = document.querySelector('ul:nth-of-type(2) li:nth-child(2)')
+// // console.log(secondLang)
+// secondLang.innerHTML = "Rust"
 
 
-const lastLang = document.querySelector('ul:nth-of-type(2) li:last-child')
-lastLang.remove()
-// console.log(lastLang)
+// const firstLang = document.querySelector('ul:nth-of-type(2) li:nth-child(1)')
+// firstLang.outerHTML = "<li>React Native</li>"
 
 
-const newLi = document.querySelector('.language')
-    const firstLi = newLi.querySelector('li:first-child')
-    const lastLi = newLi.querySelector('li:last-child')
-    // console.log(firstLi.textContent)
-    // console.log(lastLi.textContent)
+// const lastLang = document.querySelector('ul:nth-of-type(2) li:last-child')
+// lastLang.remove()
+// // console.log(lastLang)
 
 
-const secondLi = newLi.querySelector('li:nth-child(2)')
-// console.log(secondLi)
-// console.log(secondLi.parentNode)
-// console.log(secondLi.parentElement)
-
-// console.log(secondLi.nextSibling)
-
-
-const ulList = document.getElementsByClassName('numbers')
-// const ulList = document.querySelector('.numbers')
-// console.log(ulList)
-console.log(ulList[0].children)
+// const newLi = document.querySelector('.language')
+//     const firstLi = newLi.querySelector('li:first-child')
+//     const lastLi = newLi.querySelector('li:last-child')
+//     // console.log(firstLi.textContent)
+//     // console.log(lastLi.textContent)
 
 
+// const secondLi = newLi.querySelector('li:nth-child(2)')
+// // console.log(secondLi)
+// // console.log(secondLi.parentNode)
+// // console.log(secondLi.parentElement)
+
+// // console.log(secondLi.nextSibling)
 
 
-const arr = Array.from(ulList)
-const newAr = arr.map((li) => {
-    console.log(li.textContent)
-})
-console.log(arr)
+// const ulList = document.getElementsByClassName('numbers')
+// // const ulList = document.querySelector('.numbers')
+// // console.log(ulList)
+// console.log(ulList[0].children)
 
 
-const div = document.createElement('div')
-div.setAttribute('class', 'container')
-div.setAttribute('id', 'box')
-div.style.backgroundColor = 'brown'
-div.style.color = 'white'
-div.style.padding = "10px"
-div.textContent = "This is the div container."
-document.querySelector('body').appendChild(div)
-console.log(div)
+
+
+// const arr = Array.from(ulList)
+// const newAr = arr.map((li) => {
+//     console.log(li.textContent)
+// })
+// console.log(arr)
+
+
+// const div = document.createElement('div')
+// div.setAttribute('class', 'container')
+// div.setAttribute('id', 'box')
+// div.style.backgroundColor = 'brown'
+// div.style.color = 'white'
+// div.style.padding = "10px"
+// div.textContent = "This is the div container."
+// document.querySelector('body').appendChild(div)
+// console.log(div)
 
 // +++++++++++++++++++++++++++++++++ HARD QUESTIONS ++++++++++++++++++++++++++++++++++++++++++
 
+const newUl = document.createElement('ul')
+document.querySelector('body').appendChild(newUl)
+// console.log(newUl)
+
+const liItem = document.querySelector('li')
+liItem.innerHTML = 'One';
+document.querySelector(newUl).appendChild(liItem)
 
 
 

@@ -115,12 +115,33 @@
 // +++++++++++++++++++++++++++++++++ HARD QUESTIONS ++++++++++++++++++++++++++++++++++++++++++
 
 const newUl = document.createElement('ul')
+newUl.setAttribute('class', 'list-items')
 document.querySelector('body').appendChild(newUl)
-// console.log(newUl)
+console.log(newUl)
 
-const liItem = document.querySelector('li')
-liItem.innerHTML = 'One';
-document.querySelector(newUl).appendChild(liItem)
+// for(let i=1; i<=10; i++) {
+//     const liItem = document.createElement('li')
+//     liItem.innerHTML = i;
+//     document.querySelector('.list-items').appendChild(liItem)
+// }
+
+// for(let i=1; i<=10; i++) {
+//     if(i%2 !== 0) {
+//         const liItem = document.createElement('li')
+//         liItem.innerHTML = i;
+//         document.querySelector('.list-items').appendChild(liItem)  
+//     }
+// }
+
+let arr = ['java', 'python', 'react'];
+for(let i=0; i<arr.length; i++) {
+        const liItem = document.createElement('li')
+        liItem.innerHTML = arr[i].toUpperCase();
+        document.querySelector('.list-items').appendChild(liItem)  
+}
+
+
+
 
 
 

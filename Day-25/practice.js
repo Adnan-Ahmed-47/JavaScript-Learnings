@@ -114,10 +114,10 @@
 
 // +++++++++++++++++++++++++++++++++ HARD QUESTIONS ++++++++++++++++++++++++++++++++++++++++++
 
-const newUl = document.createElement('ul')
-newUl.setAttribute('class', 'list-items')
-document.querySelector('body').appendChild(newUl)
-console.log(newUl)
+// const newUl = document.createElement('ul')
+// newUl.setAttribute('class', 'list-items')
+// document.querySelector('body').appendChild(newUl)
+// console.log(newUl)
 
 // for(let i=1; i<=10; i++) {
 //     const liItem = document.createElement('li')
@@ -133,12 +133,57 @@ console.log(newUl)
 //     }
 // }
 
-let arr = ['java', 'python', 'react'];
-for(let i=0; i<arr.length; i++) {
-        const liItem = document.createElement('li')
-        liItem.innerHTML = arr[i].toUpperCase();
-        document.querySelector('.list-items').appendChild(liItem)  
-}
+// let arr = ['java', 'python', 'react'];
+// for(let i=0; i<arr.length; i++) {
+//         const liItem = document.createElement('li')
+//         liItem.innerHTML = arr[i].toUpperCase();
+//         document.querySelector('.list-items').appendChild(liItem)  
+// }
+
+
+// const cards = [{name:"Adnan",age:25},{name:"Ahmed",age:26}];
+// cards.forEach((item) => {
+//     let div = document.createElement('div')
+//     div.innerHTML = `<strong>${item.name}</strong><br>Age: ${item.age}`
+
+//     div.style.height = '50px';
+//     div.style.width = '100px';
+//     div.style.padding = '20px';
+//     div.style.textAlign = 'center'
+//     div.style.backgroundColor = 'beige';
+//     div.style.marginBottom = '10px'
+
+//     document.querySelector('body').appendChild(div)
+//     console.log(div)
+// })
+
+
+const table = document.createElement('table')
+const tableRow = document.createElement('tr')
+const tableData = document.createElement('td')
+table.setAttribute('class', 'table')
+tableRow.setAttribute('class', 'tableRow')
+tableData.setAttribute('class', 'tableData')
+console.log(table)
+console.log(tableRow)
+console.log(tableData)
+document.querySelector('body').appendChild(table)
+document.querySelector('.table').appendChild(tableRow)
+document.querySelector('.tableRow').appendChild(tableData)
+table.style.border = '1px';
+tableData.innerHTML = "Adnan"
+
+// table.setAttribute('class', 'table')
+// table.style.border = "1px"
+
+// const tableRow = document.createElement('tr')
+// const tableData = document.createElement('td')
+// document.querySelector(tableRow).appendChild(tableData)
+
+// tableData.appendChild(document.createTextNode('Adnan'))
+// document.querySelector('.table').appendChild(tableRow)
+// console.log(table)
+// console.log(tableRow)
 
 
 

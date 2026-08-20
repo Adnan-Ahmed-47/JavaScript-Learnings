@@ -158,32 +158,104 @@
 // })
 
 
-const table = document.createElement('table')
-const tableRow = document.createElement('tr')
-const tableData = document.createElement('td')
-table.setAttribute('class', 'table')
-tableRow.setAttribute('class', 'tableRow')
-tableData.setAttribute('class', 'tableData')
-console.log(table)
-console.log(tableRow)
-console.log(tableData)
-document.querySelector('body').appendChild(table)
-document.querySelector('.table').appendChild(tableRow)
-document.querySelector('.tableRow').appendChild(tableData)
-table.style.border = '1px';
-tableData.innerHTML = "Adnan"
 
-// table.setAttribute('class', 'table')
-// table.style.border = "1px"
+// let arr = ['java', 'python', 'react', 'ruby'];
+// function createDynamicTable(data) {
+//   const table = document.createElement('table');
+//   table.setAttribute('class', 'table');
+//   table.style.border = '1px solid black';
+//   document.body.appendChild(table); // Simplified body selection
 
-// const tableRow = document.createElement('tr')
-// const tableData = document.createElement('td')
-// document.querySelector(tableRow).appendChild(tableData)
+//   data.forEach((item) => {
+//     const tableRow = document.createElement('tr');
+//     tableRow.setAttribute('class', 'rows');
 
-// tableData.appendChild(document.createTextNode('Adnan'))
-// document.querySelector('.table').appendChild(tableRow)
-// console.log(table)
-// console.log(tableRow)
+//     const tableData = document.createElement('td');
+//     tableData.setAttribute('class', 'data');
+//     tableData.textContent = item; // Safer than innerHTML for plain text
+
+//     // FIX: Append directly to the elements you just created
+//     tableRow.appendChild(tableData);
+//     table.appendChild(tableRow);
+//   });
+
+//   return true;
+// }
+// console.log(createDynamicTable(cards));
+
+
+// const cards = [{name:"Adnan",age:25},{name:"Ahmed",age:26}];
+// function createDataTable(data) {
+//     // Step 1: Create a table
+//     const table = document.createElement('table');
+//     table.setAttribute('class', 'table')
+//     table.style.border = '1px solid black';
+//     document.body.appendChild(table)
+//     console.log(table);
+
+
+//     // Step 2: Create a table Header
+//     const tableHeaderRow = document.createElement('tr');
+//     tableHeaderRow.setAttribute('class', 'headerrow')
+//     tableHeaderRow.style.border = '1px solid black';
+//     const headers = ['Name', 'Age'];
+//     headers.forEach((item) => {
+//         const tableHeaderData = document.createElement('th');
+//         tableHeaderData.style.border = '1px solid black';
+//         tableHeaderData.textContent = item;
+//         tableHeaderRow.appendChild(tableHeaderData)
+//     })
+//     table.appendChild(tableHeaderRow)
+//     console.log(tableHeaderRow)
+
+
+//     // Step 3: Create a data rows
+//     data.forEach((item) => {
+//         const tableDataRow = document.createElement('tr');
+//         tableDataRow.setAttribute('class', 'rows')
+//         // tableDataRow.style.border = '1px solid black';
+
+//         // Column 1: Name
+//         const nameData = document.createElement('td');
+//         nameData.setAttribute('class', 'data');
+//         nameData.style.border = '1px solid black';
+//         nameData.textContent = item.name;
+//         tableDataRow.appendChild(nameData)
+
+//         // Column 2: Age
+//         const ageData = document.createElement('td');
+//         ageData.setAttribute('class', 'data');
+//         ageData.style.border = '1px solid black';
+//         ageData.textContent = item.age;
+//         tableDataRow.appendChild(ageData)
+
+//         // Append the complete row to the table
+//         table.appendChild(tableDataRow)
+//     })
+//     table.appendChild(tableDataRow)
+// }
+// createDataTable(cards)
+
+
+// 1. Select all <h2> elements
+const h2Elements = document.getElementsByTagName('h2');
+
+// 2. Helper function to generate a random hex color
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  console.log(color)
+  return color;
+}
+
+// 3. Loop through each <h2> and apply a unique random color
+Array.from(h2Elements).forEach((element) => {
+  element.style.color = getRandomColor();
+});
+
 
 
 

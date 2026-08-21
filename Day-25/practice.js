@@ -238,23 +238,58 @@
 
 
 // 1. Select all <h2> elements
-const h2Elements = document.getElementsByTagName('h2');
+// const h2Elements = document.getElementsByTagName('h2');
+// // 2. Helper function to generate a random hex color
+// function getRandomColor() {
+//   const letters = '0123456789ABCDEF';
+//   let color = '#';
+//   for (let i = 0; i < 6; i++) {
+//     color += letters[Math.floor(Math.random() * 16)];
+//   }
+//   return color;
+// }
 
-// 2. Helper function to generate a random hex color
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  console.log(color)
-  return color;
+// // 3. Loop through each <h2> and apply a unique random color - .from converts an html to javascript array, so that we can use forEach and loop it.
+// Array.from(h2Elements).forEach((element) => {
+//   element.style.color = getRandomColor();
+// });
+
+
+const languages = ['java', 'python', 'javascript', 'ruby', 'perl']
+
+const ul = document.createElement('ul');
+ul.setAttribute('class', 'languages')
+document.body.appendChild(ul)
+console.log(ul)
+
+languages.forEach((lang) => {
+    const li = document.createElement('li');
+    li.setAttribute('class', 'language')
+    li.textContent = lang;
+    ul.appendChild(li);
+})
+
+// const largestLi = getLargestLang(languages);
+// if(largestLi) {
+//     largestLi.style.color = 'brown'
+// }
+
+
+
+
+function getLargestLang(data) {
+    let largest = data[0]
+    data.forEach((lang) => {
+        if(lang.length > largest.length) {
+            largest = lang;
+        }
+    })
+    largest.style.color = "pink";
+    return largest;
 }
+console.log(getLargestLang(languages))
 
-// 3. Loop through each <h2> and apply a unique random color
-Array.from(h2Elements).forEach((element) => {
-  element.style.color = getRandomColor();
-});
+
 
 
 

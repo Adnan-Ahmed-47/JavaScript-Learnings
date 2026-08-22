@@ -255,45 +255,101 @@
 // });
 
 
-const languages = ['java', 'python', 'javascript', 'ruby', 'perl']
+// const languages = ['java', 'python', 'javascript', 'ruby', 'perl']
+// const ul = document.createElement('ul');
+// ul.setAttribute('class', 'languages')
+// document.body.appendChild(ul)
+// console.log(ul)
+
+// const getLongestLang = getLargestLang(languages)
+// languages.forEach((lang) => {
+//     console.log(getLongestLang)
+//     const li = document.createElement('li');
+//     li.setAttribute('class', 'language')
+//     li.textContent = lang;
+//     if(getLongestLang === lang) {
+//         li.style.color = "brown";
+//         li.style.fontSize = '24px'
+//         li.style.fontWeight = '900'
+//     } 
+//     ul.appendChild(li);
+// })
+
+// function getLargestLang(data) {
+//     let largest = data[0]
+//     data.forEach((lang) => {
+//         if(lang.length > largest.length) {
+//             largest = lang;
+//         }
+//     })
+//     return largest;
+// }
+
+
+
+// const languages = ['java', 'python', 'javascript', 'ruby', 'perl', 'python', 'ruby']
+// function removeDuplicateLang(data) {
+//     // Step 1: Create UL
+//     const ul = document.createElement('ul')
+//     ul.setAttribute('class', 'languages')
+//     document.body.appendChild(ul)
+//     console.log(ul)
+    
+//     // Step 2: Loop through the languages and filter out the duplicate languages and list all the li items.
+//     const newLanguages = data.filter((lang, index) => {
+//         return languages.indexOf(lang) === index;
+//     })
+//     console.log(newLanguages)
+    
+//     newLanguages.forEach((lang) => {
+//         const li = document.createElement('li');
+//         li.setAttribute('class', 'language')
+//         li.textContent = lang;
+//         ul.appendChild(li)
+
+//     })
+//     return newLanguages
+
+// }
+// removeDuplicateLang(languages)
+
+
+
+// let languages = ['java', 'python', 'react', 'java', 'ruby', 'python'];
+
+// let uniqueLanguages = languages.filter((item, index) => {
+//     console.log(item)
+//     console.log(languages.indexOf(item))
+//     console.log(index)
+//   // Keeps the item ONLY if its current position matches its FIRST appearance
+//   return languages.indexOf(item) === index;
+// });
+
+// console.log(uniqueLanguages); 
+// Output: ['java', 'python', 'react', 'ruby']
+
+
+
+
+let languages = ['java', 'python', 'react', 'ruby', 'javascript', 'c'];
 
 const ul = document.createElement('ul');
 ul.setAttribute('class', 'languages')
 document.body.appendChild(ul)
 console.log(ul)
 
+languages.sort();
 languages.forEach((lang) => {
     const li = document.createElement('li');
     li.setAttribute('class', 'language')
     li.textContent = lang;
+    // if(getLongestLang === lang) {
+    //     li.style.color = "brown";
+    //     li.style.fontSize = '24px'
+    //     li.style.fontWeight = '900'
+    // } 
     ul.appendChild(li);
 })
-
-// const largestLi = getLargestLang(languages);
-// if(largestLi) {
-//     largestLi.style.color = 'brown'
-// }
-
-
-
-
-function getLargestLang(data) {
-    let largest = data[0]
-    data.forEach((lang) => {
-        if(lang.length > largest.length) {
-            largest = lang;
-        }
-    })
-    largest.style.color = "pink";
-    return largest;
-}
-console.log(getLargestLang(languages))
-
-
-
-
-
-
 
 
 

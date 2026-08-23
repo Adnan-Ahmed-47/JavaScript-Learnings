@@ -331,26 +331,218 @@
 
 
 
-let languages = ['java', 'python', 'react', 'ruby', 'javascript', 'c'];
+// let languages = ['java', 'python', 'react', 'ruby', 'javascript', 'c'];
+// let languages = ['java', 'Python', 'react', 'Ruby', 'javascript', 'c']; // use .localeCompare if the items are capital and small mixed.
 
-const ul = document.createElement('ul');
-ul.setAttribute('class', 'languages')
-document.body.appendChild(ul)
-console.log(ul)
-
-languages.sort();
-languages.forEach((lang) => {
-    const li = document.createElement('li');
-    li.setAttribute('class', 'language')
-    li.textContent = lang;
-    // if(getLongestLang === lang) {
-    //     li.style.color = "brown";
-    //     li.style.fontSize = '24px'
-    //     li.style.fontWeight = '900'
-    // } 
-    ul.appendChild(li);
-})
-
-
+// function itemSorting(data) {
+//     const ul = document.createElement('ul');
+//     ul.setAttribute('class', 'languages')
+//     document.body.appendChild(ul)
+//     // console.log(ul)
+    
+//     // data.sort();
+//     data.sort((a,b) => a.localeCompare(b)) // if array has capital letters strings.
+//     data.forEach((lang) => {
+//         const li = document.createElement('li');
+//         li.setAttribute('class', 'language')
+//         li.textContent = lang;
+//         ul.appendChild(li);
+//     })
+// }
+// itemSorting(languages)
 
 
+
+// let languages = ['java', 'python', 'react', 'ruby', 'javascript', 'c'];
+// function reverseList(data) {
+//     const ul = document.createElement('ul');
+//     ul.setAttribute('class', 'languages')
+//     document.body.appendChild(ul)
+//     // console.log(ul)
+    
+//     // data.sort();
+//     data.reverse();
+//     data.forEach((lang) => {
+//         const li = document.createElement('li');
+//         li.setAttribute('class', 'language')
+//         li.textContent = lang;
+//         ul.appendChild(li);
+//     })
+// }
+// reverseList(languages)
+
+
+// function createButton(val) {
+//     for(let i=1; i<=val; i++) {
+//         const btn = document.createElement('button')
+//         btn.textContent = "Submit"
+//         btn.style.marginBottom = '10px'
+//         document.body.appendChild(btn)
+//         const br = document.createElement('br')
+//         document.body.appendChild(br)
+//     }
+//     return true;
+// }
+// createButton(20)
+
+
+
+// const profiles = [{name: 'Adnan', age: 25}, {name: "Ismail", age: 24}]
+// function displayProfile(data) {
+//     for(let i=0; i<data.length; i++) {
+//         const div = document.createElement('div');
+//         div.setAttribute('class', 'cards')
+//         div.innerHTML = data[i].name + data[i].age
+//         div.style.height = '100px'
+//         div.style.width = '100px'
+//         div.style.marginBottom = '5px'
+//         div.style.border = '1px solid black'
+
+//         document.body.appendChild(div)
+//     }
+// }
+// displayProfile(profiles)
+
+// const profiles = [{name: 'Adnan', age: 25}, {name: "Ismail", age: 24}];
+
+// function createProfileCards(data) {
+//   // 1. Create a container to hold all the cards
+//   const container = document.createElement('div');
+//   container.style.display = 'flex';
+//   container.style.gap = '20px';
+//   container.style.backgroundColor = 'pink'
+//   container.style.padding = '20px';
+//   document.body.appendChild(container);
+
+//   // 2. Loop through each profile object
+//   data.forEach((user) => {
+//     // Create the main card box
+//     const card = document.createElement('div');
+//     card.style.border = '1px solid #ccc';
+//     card.style.borderRadius = '8px';
+//     card.style.padding = '16px';
+//     card.style.width = '200px';
+//     card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+//     card.style.backgroundColor = '#f9f9f9';
+
+//     // Create and add the name heading
+//     const nameHeading = document.createElement('h3');
+//     nameHeading.textContent = user.name;
+//     nameHeading.style.margin = '0 0 8px 0';
+//     card.appendChild(nameHeading);
+
+//     // Create and add the age text
+//     const ageParagraph = document.createElement('p');
+//     ageParagraph.textContent = `Age: ${user.age}`;
+//     ageParagraph.style.margin = '0';
+//     ageParagraph.style.color = '#555';
+//     card.appendChild(ageParagraph);
+
+//     // Append the completed card to the main container
+//     container.appendChild(card);
+//   });
+
+//   return true;
+// }
+
+// createProfileCards(profiles);
+
+
+
+const shoppingProducts = [
+  {
+    id: 101,
+    title: "Wireless Noise-Canceling Headphones",
+    price: 89.99,
+    category: "Electronics",
+    inStock: true,
+    // image: "https://unsplash.com"
+    image: 'https://unsplash.com/photos/a-pair-of-headphones-sitting-on-top-of-each-other-A6hzRnwR3vM'
+  },
+  {
+    id: 102,
+    title: "Stainless Steel Water Bottle",
+    price: 24.50,
+    category: "Kitchen & Home",
+    inStock: false,
+    image: "https://unsplash.com/s/photos/headphone"
+  },
+  {
+    id: 103,
+    title: "Ergonomic Wireless Mouse",
+    price: 45.00,
+    category: "Electronics",
+    inStock: true,
+    image: "https://unsplash.com"
+  }
+];
+
+function generateProdCards(data) {
+    // Create a parent container/component
+    const div = document.createElement('div')
+    div.style.display = 'flex'
+    div.style.backgroundColor = 'beige'
+    div.style.padding = '20px'
+    div.style.gap = '20px'
+    document.body.appendChild(div)
+    // console.log(div)
+
+
+    // Create cards
+    data.forEach((product) => {
+        // Create a card container
+        const card = document.createElement('div')
+        card.style.width = '500px'
+        card.style.border = '1px solid #ccc'
+        card.style.borderRadius = '8px'
+        card.style.padding = '16px'
+        card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+        card.style.backgroundColor = '#f9f9f9'; 
+        div.appendChild(card)
+
+        // Display Product Details
+
+        // product name
+        const h3 = document.createElement('h3')
+        h3.textContent = product.title;
+        h3.style.margin = '0 0 8px 0'
+        card.appendChild(h3)
+
+        // Display Image
+        const imgDiv = document.createElement('div')
+        imgDiv.style.height = '100px'
+        imgDiv.style.width = '100px'
+        // imgDiv.style.backgroundColor = 'black'
+        imgDiv.style.marginBottom = '10px'
+        // imgDiv.innerHTML = product.image
+        card.appendChild(imgDiv)
+
+        const img = document.createElement('img')
+        // img.setAttribute('src', './img_unsplash.jpg')
+        img.setAttribute('src', product.image)
+        img.style.height = '100%'
+        img.style.width = '100%'
+        // img.textContent = product.image
+        imgDiv.appendChild(img)
+
+        // pricing
+        const para = document.createElement('p')
+        para.textContent = `Price: ${product.price}`
+        para.style.margin = '0'
+        card.appendChild(para)
+
+        // category
+        const prodCat = document.createElement('p')
+        prodCat.style.margin = '0'
+        prodCat.textContent = `Category: ${product.category}`
+        card.appendChild(prodCat)
+
+        // In stock
+        const prodStock = document.createElement('p')
+        prodStock.style.margin = '0'
+        prodStock.textContent = `Available: ${product.inStock ? 'Yes' : 'No'}`
+        card.appendChild(prodStock)
+
+    })
+}
+generateProdCards(shoppingProducts)

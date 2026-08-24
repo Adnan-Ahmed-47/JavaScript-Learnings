@@ -449,100 +449,138 @@
 
 
 
-const shoppingProducts = [
-  {
-    id: 101,
-    title: "Wireless Noise-Canceling Headphones",
-    price: 89.99,
-    category: "Electronics",
-    inStock: true,
-    // image: "https://unsplash.com"
-    image: 'https://unsplash.com/photos/a-pair-of-headphones-sitting-on-top-of-each-other-A6hzRnwR3vM'
-  },
-  {
-    id: 102,
-    title: "Stainless Steel Water Bottle",
-    price: 24.50,
-    category: "Kitchen & Home",
-    inStock: false,
-    image: "https://unsplash.com/s/photos/headphone"
-  },
-  {
-    id: 103,
-    title: "Ergonomic Wireless Mouse",
-    price: 45.00,
-    category: "Electronics",
-    inStock: true,
-    image: "https://unsplash.com"
-  }
+// const shoppingProducts = [
+//   {
+//     id: 101,
+//     title: "Wireless Noise-Canceling Headphones",
+//     price: 89.99,
+//     category: "Electronics",
+//     inStock: true,
+//     // image: "https://unsplash.com"
+//     image: 'https://unsplash.com/photos/a-pair-of-headphones-sitting-on-top-of-each-other-A6hzRnwR3vM'
+//   },
+//   {
+//     id: 102,
+//     title: "Stainless Steel Water Bottle",
+//     price: 24.50,
+//     category: "Kitchen & Home",
+//     inStock: false,
+//     image: "https://unsplash.com/s/photos/headphone"
+//   },
+//   {
+//     id: 103,
+//     title: "Ergonomic Wireless Mouse",
+//     price: 45.00,
+//     category: "Electronics",
+//     inStock: true,
+//     image: "https://unsplash.com"
+//   }
+// ];
+
+// function generateProdCards(data) {
+//     // Create a parent container/component
+//     const div = document.createElement('div')
+//     div.style.display = 'flex'
+//     div.style.backgroundColor = 'beige'
+//     div.style.padding = '20px'
+//     div.style.gap = '20px'
+//     document.body.appendChild(div)
+//     // console.log(div)
+
+
+//     // Create cards
+//     data.forEach((product) => {
+//         // Create a card container
+//         const card = document.createElement('div')
+//         card.style.width = '500px'
+//         card.style.border = '1px solid #ccc'
+//         card.style.borderRadius = '8px'
+//         card.style.padding = '16px'
+//         card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+//         card.style.backgroundColor = '#f9f9f9'; 
+//         div.appendChild(card)
+
+//         // Display Product Details
+
+//         // product name
+//         const h3 = document.createElement('h3')
+//         h3.textContent = product.title;
+//         h3.style.margin = '0 0 8px 0'
+//         card.appendChild(h3)
+
+//         // Display Image
+//         const imgDiv = document.createElement('div')
+//         imgDiv.style.height = '100px'
+//         imgDiv.style.width = '100px'
+//         // imgDiv.style.backgroundColor = 'black'
+//         imgDiv.style.marginBottom = '10px'
+//         // imgDiv.innerHTML = product.image
+//         card.appendChild(imgDiv)
+
+//         const img = document.createElement('img')
+//         // img.setAttribute('src', './img_unsplash.jpg')
+//         img.setAttribute('src', product.image)
+//         img.style.height = '100%'
+//         img.style.width = '100%'
+//         // img.textContent = product.image
+//         imgDiv.appendChild(img)
+
+//         // pricing
+//         const para = document.createElement('p')
+//         para.textContent = `Price: ${product.price}`
+//         para.style.margin = '0'
+//         card.appendChild(para)
+
+//         // category
+//         const prodCat = document.createElement('p')
+//         prodCat.style.margin = '0'
+//         prodCat.textContent = `Category: ${product.category}`
+//         card.appendChild(prodCat)
+
+//         // In stock
+//         const prodStock = document.createElement('p')
+//         prodStock.style.margin = '0'
+//         prodStock.textContent = `Available: ${product.inStock ? 'Yes' : 'No'}`
+//         card.appendChild(prodStock)
+
+//     })
+// }
+// generateProdCards(shoppingProducts)
+
+
+
+const menuItems = [
+  { text: "Home", url: "/home" },
+  { text: "Products", url: "/products" },
+  { text: "About Us", url: "/about" },
+  { text: "Contact", url: "/contact" }
 ];
 
-function generateProdCards(data) {
-    // Create a parent container/component
-    const div = document.createElement('div')
-    div.style.display = 'flex'
-    div.style.backgroundColor = 'beige'
-    div.style.padding = '20px'
-    div.style.gap = '20px'
-    document.body.appendChild(div)
-    // console.log(div)
+function navBarItems(data) {
+    const nav = document.createElement('nav');
+    nav.setAttribute('class', 'navContainer')
+    document.body.appendChild(nav)
+    console.log(nav)
 
+    const ulList = document.createElement('ul')
+    ulList.setAttribute('class', 'navbar-items')
+    ulList.style.display = 'flex';
+    ulList.style.listStyleType = 'none';
+    nav.appendChild(ulList)
+    console.log(ulList)
 
-    // Create cards
-    data.forEach((product) => {
-        // Create a card container
-        const card = document.createElement('div')
-        card.style.width = '500px'
-        card.style.border = '1px solid #ccc'
-        card.style.borderRadius = '8px'
-        card.style.padding = '16px'
-        card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-        card.style.backgroundColor = '#f9f9f9'; 
-        div.appendChild(card)
+    data.forEach((item) => {
+        const li = document.createElement('li')
+        li.setAttribute('class', 'nav-items')
 
-        // Display Product Details
-
-        // product name
-        const h3 = document.createElement('h3')
-        h3.textContent = product.title;
-        h3.style.margin = '0 0 8px 0'
-        card.appendChild(h3)
-
-        // Display Image
-        const imgDiv = document.createElement('div')
-        imgDiv.style.height = '100px'
-        imgDiv.style.width = '100px'
-        // imgDiv.style.backgroundColor = 'black'
-        imgDiv.style.marginBottom = '10px'
-        // imgDiv.innerHTML = product.image
-        card.appendChild(imgDiv)
-
-        const img = document.createElement('img')
-        // img.setAttribute('src', './img_unsplash.jpg')
-        img.setAttribute('src', product.image)
-        img.style.height = '100%'
-        img.style.width = '100%'
-        // img.textContent = product.image
-        imgDiv.appendChild(img)
-
-        // pricing
-        const para = document.createElement('p')
-        para.textContent = `Price: ${product.price}`
-        para.style.margin = '0'
-        card.appendChild(para)
-
-        // category
-        const prodCat = document.createElement('p')
-        prodCat.style.margin = '0'
-        prodCat.textContent = `Category: ${product.category}`
-        card.appendChild(prodCat)
-
-        // In stock
-        const prodStock = document.createElement('p')
-        prodStock.style.margin = '0'
-        prodStock.textContent = `Available: ${product.inStock ? 'Yes' : 'No'}`
-        card.appendChild(prodStock)
-
+        const anTag = document.createElement('a')
+        anTag.setAttribute('href', `${item.url}`)
+        console.log(anTag)
+        anTag.textContent = item.text;
+        // li.style.listStyleType = 'none';
+        ulList.appendChild(li)
+        li.appendChild(anTag)
     })
-}
-generateProdCards(shoppingProducts)
+
+} 
+navBarItems(menuItems)

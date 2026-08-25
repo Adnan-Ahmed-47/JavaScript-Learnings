@@ -549,38 +549,61 @@
 
 
 
-const menuItems = [
-  { text: "Home", url: "/home" },
-  { text: "Products", url: "/products" },
-  { text: "About Us", url: "/about" },
-  { text: "Contact", url: "/contact" }
-];
+// const menuItems = [
+//   { text: "Home", url: "/home" },
+//   { text: "Products", url: "/products" },
+//   { text: "About Us", url: "/about" },
+//   { text: "Contact", url: "/contact" }
+// ];
 
-function navBarItems(data) {
-    const nav = document.createElement('nav');
-    nav.setAttribute('class', 'navContainer')
-    document.body.appendChild(nav)
-    console.log(nav)
+// function navBarItems(data) {
+//     const nav = document.createElement('nav');
+//     nav.setAttribute('class', 'navContainer')
+//     nav.style.width = '500px'
+//     nav.style.backgroundColor = '#f0f0f0'
+//     nav.style.padding = '15px'
+//     document.body.appendChild(nav)
+//     console.log(nav)
 
-    const ulList = document.createElement('ul')
-    ulList.setAttribute('class', 'navbar-items')
-    ulList.style.display = 'flex';
-    ulList.style.listStyleType = 'none';
-    nav.appendChild(ulList)
-    console.log(ulList)
+//     const ulList = document.createElement('ul')
+//     ulList.setAttribute('class', 'navbar-items')
+//     ulList.style.display = 'flex';
+//     ulList.style.justifyContent = 'space-around';
+//     ulList.style.alignItems = 'center';
+//     ulList.style.paddingLeft = '0';
+//     ulList.style.listStyleType = 'none';
+//     ulList.style.margin = '0';
+//     nav.appendChild(ulList)
+//     console.log(ulList)
 
-    data.forEach((item) => {
-        const li = document.createElement('li')
-        li.setAttribute('class', 'nav-items')
+//     data.forEach((item) => {
+//         const li = document.createElement('li')
+//         li.setAttribute('class', 'nav-items')
+//         li.style.padding = '10px'
+//         li.style.border = '1px solid blue'
+//         li.style.borderRadius = '10px'
 
-        const anTag = document.createElement('a')
-        anTag.setAttribute('href', `${item.url}`)
-        console.log(anTag)
-        anTag.textContent = item.text;
-        // li.style.listStyleType = 'none';
-        ulList.appendChild(li)
-        li.appendChild(anTag)
-    })
+//         const anTag = document.createElement('a')
+//         anTag.setAttribute('href', `${item.url}`)
+//         console.log(anTag)
+//         anTag.textContent = item.text;
+//         anTag.style.textDecoration = 'none';
+//         ulList.appendChild(li)
+//         li.appendChild(anTag)
+//     })
 
-} 
-navBarItems(menuItems)
+// } 
+// navBarItems(menuItems)
+
+
+
+function createElement(tag, text, className, backgroundColor) {
+    const element = document.createElement(tag)
+    element.textContent = text;
+    element.setAttribute('class', className)
+    element.style.backgroundColor = backgroundColor;
+
+    document.body.appendChild(element)
+}
+createElement('h3', 'Heading 3', 'heading', 'pink')
+createElement('p', 'This is a paragraph', 'para', 'blue')

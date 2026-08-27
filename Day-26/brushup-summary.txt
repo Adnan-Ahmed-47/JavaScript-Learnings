@@ -1,0 +1,21 @@
+######################################### Day-1 #####################################################
+"use strict"; -> treats the JS code as newer version
+-> code readability should be high.
+
+- Primitive Datatypes:
+number    -> 2 to power of 53
+bigint    -> used in trades, stock markets etc.
+string    -> collection of characters in quotes
+boolean   -> true/false
+null      -> representation of empty value
+undefined -> variable is declared but the value is not defined to that variable.
+symbol    -> it is mostly used in react, when we create multiple components, to differ the components 
+             uniqueness, we use symbol.
+
+- Non-Primitive Datatypes:
+object
+
+typeof null is an object
+typeof undefined is undefined only.
+----------------------------------------------
+Variables & Constants:

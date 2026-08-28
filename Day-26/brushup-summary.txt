@@ -1,4 +1,7 @@
 ######################################### Day-1 #####################################################
+console.log("Hello");
+
+######################################### Day-2 #####################################################
 "use strict"; -> treats the JS code as newer version
 -> code readability should be high.
 
@@ -18,4 +21,41 @@ object
 typeof null is an object
 typeof undefined is undefined only.
 ----------------------------------------------
-Variables & Constants:
+- Variables & Constants (let, var, const):
+
+-> The value declared by const cannot be changed, it cannot be updated.
+-> Prefer not to use var, bcoz of the issue in block scope and functional scope
+-> var is a global scope variable, if we use it inside a function also, but it will still be accessible outside of that scope as well.
+-> let is very good practice to use, but if u don't want to change the declared value, const is also the best option.
+
+######################################### Day-3 #####################################################
+- Conversion Operation:
+
+-> You can check the type of datatype of a variable by using typeof method.
+    Eg: let score = "adnan"
+       console.log(typeof score) // string
+       let scoreInNum = Number(score);
+       console.log(typeof(scoreInNum)); // number
+       console.log(scoreInNum); // NaN
+
+       // "33" => 33
+       // "33abc" => NaN
+       // true => 1; false => 0
+
+    Eg2: let isLoggedIn = "hitesh";
+       const loginInBool = Boolean(isLoggedIn);
+       console.log(typeof loginInBool); // boolean
+       console.log(loginInBool); // true
+
+        // 1 => true; 0 => false;
+        // "" => false
+        // "hitesh" => true
+
+    Eg3: let someNumber = 33;
+         let stringNum = String(someNumber);
+         console.log(typeof stringNum); // string
+         console.log(stringNum); // "33"
+
+
+    
+

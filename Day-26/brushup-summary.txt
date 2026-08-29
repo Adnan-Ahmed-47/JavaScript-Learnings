@@ -56,6 +56,8 @@ typeof undefined is undefined only.
          console.log(typeof stringNum); // string
          console.log(stringNum); // "33"
 
+######################################### Day-3 #####################################################
+
 
     
 

@@ -13,12 +13,30 @@
 
 // console.log(2!=1)
 
-console.log("2" > 1);
-console.log("02" > 1);
+// console.log("2" > 1);
+// console.log("02" > 1);
 
 
-console.log(null > 0);
-console.log(null == 0);
-console.log(null >= 0);
+// console.log(null > 0);
+// console.log(null == 0);
+// console.log(null >= 0);
 
 
+
+let value = 3;
+let negValue = -value;
+// console.log(negValue);
+
+// console.log(2**3);
+
+// console.log("1" + 2);
+// console.log(1 + "2");
+// console.log("1" + 2 + 2);
+// console.log(1 + 2 + "2");
+
+
+let num1, num2, num3;
+
+num1 = num2 = num3 = 2+2;
+
+console.table([num1, num2, num3]);

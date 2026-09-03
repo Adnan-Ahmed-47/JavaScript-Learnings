@@ -94,4 +94,11 @@ let negValue = -value;
 
 -> ye jitne bhi primitive types hain, ye sab call by value hote hain, matlab jab bhi aap inko kahin se kahin copy karte hain, toh inka jo original data hai, woh reference apko memory ka nahi diya jaata, inko copy karke aapko diya jaata hai, aur usme aap jo bhi changes karte ho woh copy mein changes hote hain.
 
+// 7 types: String, Number, Boolean, null, undefined, Symbol, BigInt
+
+// ----------------------------------------------------------------------------
+// Reference type(Non-primitive): ye saari values woh hai jo ki memory mein inka reference aapko directly allocate kiya ja sakta hai
+
+// Arrays, Objects, Functions
+
 

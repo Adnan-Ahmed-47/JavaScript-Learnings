@@ -101,4 +101,19 @@ let negValue = -value;
 
 // Arrays, Objects, Functions
 
+// The Biggest Misconception
+
+// Many beginners think:
+
+// x++ means "increase x by 1".
+
+// That's only half true.
+
+// The increment operator actually does TWO things:
+
+// Increase the variable by 1.
+// Return a value.
+
+// The difference between prefix and postfix is which value gets returned.
+
 

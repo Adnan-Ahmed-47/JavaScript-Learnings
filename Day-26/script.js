@@ -40,3 +40,6 @@ let negValue = -value;
 // console.table([num1, num2, num3]);
 
 
+
+
+// brushing up the concepts from starting.
